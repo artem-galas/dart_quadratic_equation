@@ -21,6 +21,7 @@ class QuadraticEquation {
       return 'Roots are real and different:\n X1 = $x1 \n X2 = $x2';
     } else if(discriminant == 0) {
       x1 = (-b - sqrt(discriminant))/ (2*a);
+      x2 = x1;
       return 'Roots are real and same:\n X1 == X2 = $x1';
     } else {
       double realPart = -b / (2*a);
