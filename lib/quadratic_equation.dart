@@ -1,37 +1,33 @@
 import 'dart:math';
-import 'dart:io';
 
-void quadratic_equation() {
-  double a, b, c, discriminant, x1, x2;
-  stdout.writeln('Please add a, b, c using space!');
-  try {
-    String user_input = stdin.readLineSync();
-    List<String> user_input_list = user_input.split(' ');
-    List<double> some = user_input_list.map((item) => double.parse(item)).toList();
-    a = some[0];
-    b = some[1];
-    c = some[2];
-    discriminant = pow(b, 2) - 4*a*c;
+class QuadraticEquation {
+  double a;
+  double b;
+  double c;
+  double discriminant;
+  double x1;
+  double x2;
+  QuadraticEquation(double a, double b, double c) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
+    this.discriminant = pow(b, 2) - 4*a*c;
+  }
 
-    stdout.writeln('Discrimenant = $discriminant');
-
+  String calculationOfRoots() {
     if(discriminant > 0) {
       x1 = (-b + sqrt(discriminant)) / (2*a);
       x2 = (-b - sqrt(discriminant)) / (2*a);
-      stdout.writeln('Roots are real and different: X1= $x1, X2= $x2');
+      return 'Roots are real and different:\n X1 = $x1 \n X2 = $x2';
     } else if(discriminant == 0) {
-      stdout.writeln('Roots are real and same.');
       x1 = (-b - sqrt(discriminant))/ (2*a);
-      stdout.writeln('X1 == X2 = $x1');
+      return 'Roots are real and same:\n X1 == X2 = $x1';
     } else {
-      double real_part = -b / (2*a);
-      double imaginary_part = sqrt(-discriminant) / (2*a);
-      stdout.writeln('Roots are complex and different.');
-      stdout.writeln('X1 = ${real_part + imaginary_part}');
-      stdout.writeln('X2 = ${real_part - imaginary_part}');
+      double realPart = -b / (2*a);
+      double imaginaryPart = sqrt(-discriminant) / (2*a);
+      x1 = realPart + imaginaryPart;
+      x2 = realPart - imaginaryPart;
+      return 'Roots are complex and different:\n X1 = $x1 \n X2 = $x2 ';
     }
-
-  } catch(err) {
-    stderr.writeln('$err');
   }
 }
