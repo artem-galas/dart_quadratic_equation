@@ -1,4 +1,4 @@
-# quadratic_equation
+# quadratic_equation [![Build Status](https://travis-ci.org/artem-galas/dart_quadratic_equation.svg?branch=master)](https://travis-ci.org/artem-galas/dart_quadratic_equation)
 
 A sample command-line application.
 
