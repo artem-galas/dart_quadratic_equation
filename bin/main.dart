@@ -9,11 +9,12 @@ void main(List<String> arguments) {
       .split(' ')
       .map((item) => double.parse(item)).toList();
 
-    var quadraticEquation = new QuadraticEquation(
+    Map<String, double> roots = calculationOfRoots(
       userInputList[0],
       userInputList[1],
       userInputList[2]);
-    stdout.writeln(quadraticEquation.calculationOfRoots());
+    
+    stdout.writeln(roots);
   } catch(error) {
     stderr.writeln(error);
   }
