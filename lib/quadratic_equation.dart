@@ -1,6 +1,12 @@
 import 'dart:math';
 
-Map<String, double>calculationOfRoots(num a, num b, num c ) {
+class QuadraticRoots {
+  final double x1;
+  final double x2;
+  QuadraticRoots(final double this.x1, final double this.x2) {}
+}
+
+QuadraticRoots calculationOfRoots(num a, num b, num c ) {
   a = a.toDouble();
   b = b.toDouble();
   c = c.toDouble();
@@ -20,5 +26,5 @@ Map<String, double>calculationOfRoots(num a, num b, num c ) {
     x2 = realPart - imaginaryPart;
   }
 
-  return {'x1': x1, 'x2': x2};
+  return new QuadraticRoots(x1, x2);
 }

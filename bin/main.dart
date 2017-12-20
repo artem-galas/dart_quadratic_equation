@@ -9,7 +9,7 @@ void main(List<String> arguments) {
       .split(' ')
       .map((item) => double.parse(item)).toList();
 
-    Map<String, double> roots = calculationOfRoots(
+    QuadraticRoots roots = calculationOfRoots(
       userInputList[0],
       userInputList[1],
       userInputList[2]);
